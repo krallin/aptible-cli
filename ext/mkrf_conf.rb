@@ -2,6 +2,8 @@ require 'English'
 require 'rubygems'
 require 'rubygems/dependency_installer'
 
+$stdin.close
+
 installer = Gem::DependencyInstaller.new
 
 begin
@@ -17,3 +19,5 @@ puts 'Writing dummy Rakefile'
 File.open(File.join(File.dirname(__FILE__), 'Rakefile'), 'w') do |f|
   f.write('task :default' + $RS)
 end
+
+puts 'Done!'
